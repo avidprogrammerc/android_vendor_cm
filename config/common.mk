@@ -1,5 +1,6 @@
 PRODUCT_BRAND ?= cyanogenmod
 
+-include vendor/cm-priv/keys.mk
 SUPERUSER_EMBEDDED := true
 SUPERUSER_PACKAGE_PREFIX := com.android.settings.cyanogenmod.superuser
 
@@ -70,8 +71,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.com.android.dataroaming=false \
     pm.sleep_mode=0 \
     ro.ril.disable.power.collapse=0 \
-    ro.vold.umsdirtyratio=20 \
-    persist.sys.root_access=3
+    ro.vold.umsdirtyratio=20
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.build.selinux=1
 
 # Backup Tool
 PRODUCT_COPY_FILES += \
@@ -137,9 +140,11 @@ include vendor/cm/config/themes_common.mk
 
 # Required CM packages
 PRODUCT_PACKAGES += \
-    Camera \
+    Focal \
     Development \
-    LatinIME
+    LatinIME \
+    Superuser \
+    su
 
 # Optional CM packages
 PRODUCT_PACKAGES += \
@@ -198,7 +203,7 @@ PRODUCT_PACKAGE_OVERLAYS += vendor/cm/overlay/dictionaries
 PRODUCT_PACKAGE_OVERLAYS += vendor/cm/overlay/common
 
 PRODUCT_VERSION_MAJOR = 10
-PRODUCT_VERSION_MINOR = 1
+PRODUCT_VERSION_MINOR = 2
 PRODUCT_VERSION_MAINTENANCE = 0-RC0
 
 # Set CM_BUILDTYPE
