@@ -167,6 +167,11 @@ PRODUCT_PACKAGES += \
     DashClock \
     StalkExplorer
 
+# CM Hardware Abstraction Framework
+PRODUCT_PACKAGES += \
+    org.cyanogenmod.hardware \
+    org.cyanogenmod.hardware.xml
+
 # Extra tools in CM
 PRODUCT_PACKAGES += \
     openvpn \
@@ -230,7 +235,7 @@ else
     CM_EXTRAVERSION :=
 endif
 
-Bean_Version=1.300
+Bean_Version=4.3.00
 CM_VERSION := BeanStalk$(Bean_Version)-$(shell date -u +%Y%m%d)-$(CM_BUILD)$(CM_EXTRAVERSION)
 
 PRODUCT_PROPERTY_OVERRIDES += \
