@@ -144,6 +144,7 @@ PRODUCT_PACKAGES += \
     Focal \
     Development \
     LatinIME \
+    HALO \
     Superuser \
     su
 
@@ -239,12 +240,12 @@ else
     CM_EXTRAVERSION :=
 endif
 
-Bean_Version=4.3.00
+Bean_Version=4.3.05
 CM_VERSION := BeanStalk-$(Bean_Version)-$(shell date -u +%Y%m%d)-$(CM_BUILD)$(CM_EXTRAVERSION)
 
 PRODUCT_PROPERTY_OVERRIDES += \
   ro.cm.version=$(CM_VERSION) \
   ro.modversion=$(CM_VERSION)
 
-
+-include vendor/cm/sepolicy/sepolicy.mk
 -include $(WORKSPACE)/hudson/image-auto-bits.mk
