@@ -118,7 +118,8 @@ PRODUCT_COPY_FILES +=  \
     vendor/cm/proprietary/lib/armeabi/libjackpal-androidterm4.so:system/lib/libjackpal-androidterm4.so \
     vendor/cm/prebuilt/XposedDPI.apk:system/app/XposedDPI.apk \
     vendor/cm/prebuilt/Nova.apk:system/app/Nova.apk \
-    vendor/cm/prebuilt/XposedInstaller.apk:system/app/XposedInstaller.apk
+    vendor/cm/prebuilt/XposedInstaller.apk:system/app/XposedInstaller.apk \
+    vendor/cm/prebuilt/GooManager.apk:system/app/GooManager.apk
 
 # Bring in camera effects
 PRODUCT_COPY_FILES +=  \
