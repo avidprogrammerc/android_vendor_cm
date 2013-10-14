@@ -77,12 +77,18 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.build.selinux=1 \
     persist.sys.root_access=1
 
+# Disable excessive dalvik debug messages
+PRODUCT_PROPERTY_OVERRIDES += \
+    dalvik.vm.debug.alloc=0
+
 # Backup Tool
+ifneq ($(WITH_GMS),true)
 PRODUCT_COPY_FILES += \
     vendor/cm/prebuilt/common/bin/backuptool.sh:system/bin/backuptool.sh \
     vendor/cm/prebuilt/common/bin/backuptool.functions:system/bin/backuptool.functions \
     vendor/cm/prebuilt/common/bin/50-cm.sh:system/addon.d/50-cm.sh \
     vendor/cm/prebuilt/common/bin/blacklist:system/addon.d/blacklist
+endif
 
 # init.d support
 PRODUCT_COPY_FILES += \
